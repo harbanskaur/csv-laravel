@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 23, 2023 at 01:51 PM
+-- Generation Time: Oct 23, 2023 at 01:53 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -18,43 +18,46 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `laravel`
+-- Database: `mydb`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `student`
+-- Table structure for table `state`
 --
 
-CREATE TABLE `student` (
+CREATE TABLE `state` (
   `id` int(11) NOT NULL,
-  `first_name` varchar(255) NOT NULL,
-  `last_name` varchar(255) NOT NULL,
-  `marks1` int(11) NOT NULL,
-  `marks2` int(11) NOT NULL
+  `state_name` varchar(255) NOT NULL,
+  `country_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `student`
+-- Dumping data for table `state`
 --
 
-INSERT INTO `student` (`id`, `first_name`, `last_name`, `marks1`, `marks2`) VALUES
-(1, 'harbans', 'kaur', 100, 200),
-(2, 'hello', 'GUYS', 12, 34),
-(3, 'gurleen', 'kaur', 123, 345),
-(6, 'ritika', ' sharama', 122, 23),
-(7, 'himanshu', 'sharma', 33, 44),
-(8, 'rishu', 'goyal', 54, 67);
+INSERT INTO `state` (`id`, `state_name`, `country_id`) VALUES
+(1, 'Punjab', 18),
+(2, 'Himanchal', 18),
+(3, 'Madhya Pradesh', 18),
+(4, 'Bihar', 18),
+(5, 'Uttrakhand', 18),
+(6, 'jammu', 18),
+(7, 'Haryana', 18),
+(8, 'Kolakata', 18),
+(9, 'Utter Pradesh', 18),
+(10, 'Gujrat', 18),
+(11, 'British Columbia', 49);
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `student`
+-- Indexes for table `state`
 --
-ALTER TABLE `student`
+ALTER TABLE `state`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -62,10 +65,10 @@ ALTER TABLE `student`
 --
 
 --
--- AUTO_INCREMENT for table `student`
+-- AUTO_INCREMENT for table `state`
 --
-ALTER TABLE `student`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+ALTER TABLE `state`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
