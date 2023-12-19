@@ -1,0 +1,15 @@
+.table tr td{
+    border:1px solid black;
+}
+.table tr th{
+    border:1px solid black;
+}
+.table{
+    width:50%;
+}
+.link button{
+    background-color:lightpink;
+    width:150px;
+    height:30px;
+    border:1px solid white;
+}

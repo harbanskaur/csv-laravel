@@ -5,43 +5,30 @@
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-        <style>
-            .custom-table tbody td:hover {
-                background-color: #f7f7f7;
-                transition: background-color 0.3s;
-            }
-        </style>
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        {{-- stylesheet --}}
+        <link rel="stylesheet" href="{{asset('assets/style.css')}}">
     </head>
     <body>
-        <table class="table table-striped table-bordered table-responsive">
-            <thead class="thead-dark">
+        {{-- table starts --}}
+        <table class="table">
+            <thead>
                 <tr>
                     <th>ID</th>
-                    <th>State</th>
-                    <th>Country Id</th>
+                    <th>City</th>
+                    <th>State-Id</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach ($states as $state)
+                @foreach ($states as $city)
                 <tr class="table-info">
-                    <td>{{ $state->id }}</td>
-                    <td>{{ $state->state_name }}</td>
-                    <td>{{ $state->country_id }}</td>
+                    <td>{{ $city->id }}</td>
+                    <td>{{ $city->city_name }}</td>
+                    <td>{{ $city->state_id }}</td>
                 </tr>
                 @endforeach
             </tbody>
         </table>
         <a href="{{ route('export.csv') }}" class="btn btn-primary">Download CSV</a>
-        <form action="{{ route('import.csv') }}" method="post" enctype="multipart/form-data">
-            @csrf
-            <input type="file" name="csv_file" >
-
-            <button type="submit" class="btn btn-primary">import CSV</button>
-            
-        </form>
     </body>
 
 </html>
