@@ -15,3 +15,4 @@ use App\Http\Controllers\Csv;
 
 Route::get('/', [Csv::class,'index']);
 Route::get('/export_csv', [Csv::class,'export_csv'])->name('export.csv');
+Route::post('/importCSV', [Csv::class,'importCSV'])->name('import.csv');

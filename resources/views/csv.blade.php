@@ -35,5 +35,13 @@
             </tbody>
         </table>
         <a href="{{ route('export.csv') }}" class="btn btn-primary">Download CSV</a>
+        <form action="{{ route('import.csv') }}" method="post" enctype="multipart/form-data">
+            @csrf
+            <input type="file" name="csv_file" >
+
+            <button type="submit" class="btn btn-primary">import CSV</button>
+            
+        </form>
     </body>
+
 </html>
